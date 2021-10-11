@@ -7,9 +7,7 @@ package baseline;
 
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Solution41
 {
@@ -18,21 +16,25 @@ public class Solution41
         Solution41 solution = new Solution41();
 
         // check to see if there is an input file
-        // check while there is an input stream, get the next line
-        // add that line into an arraylist and repeat until there are no more lines to add
-        // sort the arraylist using collections.sort
-        // output the new arraylist in the correct order into a new file
+        try (Scanner reader = new Scanner(Paths.get("data/exercise41_input.txt"))) {
 
-        try(Scanner reader = new Scanner(Paths.get("data/exercise41_input.txt"))) {
             ArrayList<String> names = new ArrayList<String>();
-            names = solution.getUnsortedEmployeeList(reader, names);
 
+            // check while there is an input stream, get the next line
+            // add that line into an arraylist and repeat until there are no more lines to add
+            names = solution.getUnsortedNames(reader, names);
+
+            // sort the arraylist using collections.sort
+            names = solution.sortNames(names);
+
+            // output the new arraylist in the correct order into a new file
+            solution.printNamesToFile(names);
         }
         catch (NoSuchElementException | IllegalStateException | IOException e) {
             e.printStackTrace();
         }
     }
-    private ArrayList<String> getUnsortedEmployeeList(Scanner reader, ArrayList<String> employeeNames)
+    private ArrayList<String> getUnsortedNames(Scanner reader, ArrayList<String> employeeNames)
     {
         while(reader.hasNextLine())
         {
@@ -40,12 +42,24 @@ public class Solution41
         }
         return employeeNames;
     }
-    private void sortEmployeeList(ArrayList<String> names)
+    public ArrayList<String> sortNames(ArrayList<String> names)
     {
-
+        Collections.sort(names);
+        return names;
     }
-    private void printSortedEmployeeList()
+    private void printNamesToFile(ArrayList<String> names)
     {
-
+        try (Formatter output = new Formatter("data/exercise41_output.txt"))
+        {
+            output.format("Total of %d names\n-----------------\n", names.size());
+            for (int i = 0; i < names.size(); i++)
+            {
+                output.format("%s\n", names.get(i));
+            }
+        }
+        catch (NoSuchElementException | IllegalStateException | IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 }

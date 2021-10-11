@@ -9,10 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Solution41Test extends Solution41
 {
     @Test
-    private void testNameSortingMethod()
+    void testNameSortingMethod()
     {
         Solution41 testSolution = new Solution41();
         ArrayList<String> testNames = new ArrayList<String>();
+
         testNames.add("Ling, Mai");
         testNames.add("Johnson, Jim");
         testNames.add("Zarnecki, Sabrina");
@@ -20,7 +21,10 @@ public class Solution41Test extends Solution41
         testNames.add("Jones, Aaron");
         testNames.add("Swift, Geoffrey");
         testNames.add("Xiong, Fong");
-        testNames = testSolution.sortEmployeeList(testNames);
-        assertEquals(testNames, "1");
+
+        testNames = testSolution.sortNames(testNames);
+
+        // check if collections.sort is working correctly for any given line
+        assertEquals("Johnson, Jim", testNames.get(0));
     }
 }
