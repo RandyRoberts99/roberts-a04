@@ -25,6 +25,3 @@ run {
 application {
     mainClass = "baseline.Solution41"
 }
-test {
-    useJUnitPlatform()
-}

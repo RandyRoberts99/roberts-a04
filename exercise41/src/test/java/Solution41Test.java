@@ -2,17 +2,17 @@ import baseline.Solution41;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Solution41Test extends Solution41
+class Solution41Test extends Solution41
 {
     @Test
     void testNameSortingMethod()
     {
         Solution41 testSolution = new Solution41();
-        ArrayList<String> testNames = new ArrayList<String>();
+        List<String> testNames = new ArrayList<>();
 
         testNames.add("Ling, Mai");
         testNames.add("Johnson, Jim");

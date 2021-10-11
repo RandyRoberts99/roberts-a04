@@ -1,13 +1,12 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-class ArrayList {
+class Solution41 {
 Scanner reader
-ArrayList<String> names
+List<String> names
 
-getUnsortedNames(reader, ArrayList<String> names)
+getUnsortedNames(reader, List<String> names)
 sortNames(names)
 printNamesToFile(names)
 }
-
 @enduml
