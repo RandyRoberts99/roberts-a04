@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Solution42 {
+Scanner reader
+List<String> userData
+
+getUserData()
+parseUserData()
+}
+@enduml
