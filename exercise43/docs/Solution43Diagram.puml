@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Solution43 {
+String websiteName
+String authorName
+boolean useJS
+boolean useCSS
+
+String getString(String prompt)
+boolean getResponse(String prompt)
+}
+
+@enduml
