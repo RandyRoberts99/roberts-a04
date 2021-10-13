@@ -1,6 +1,12 @@
 @startuml
 'https://plantuml.com/class-diagram
 
+
+' I chose to keep all of my methods in one class simply because it's concise,
+' the program itself isn't overly complex in terms of its requirements,
+' and it felt unnecessary to add a new class for ~30 lines of code,
+' and leaving the main class empty.
+
 class Solution41 {
 Scanner reader
 List<String> names
