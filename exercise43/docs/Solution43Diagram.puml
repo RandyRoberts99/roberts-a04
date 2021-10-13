@@ -7,8 +7,25 @@ String authorName
 boolean useJS
 boolean useCSS
 
-String getString(String prompt)
-boolean getResponse(String prompt)
+main()
+-String getString(String prompt)
+-boolean getResponse(String prompt)
+WebsiteCreator websiteCreator(websiteName, authorName, useJS, useCSS)
 }
+class WebsiteCreator {
+    String websiteName
+    String authorName
+    boolean useJS
+    boolean useCSS
 
+    +WebsiteCreator(String websiteName, String authorName, boolean useJS, boolean useCSS)
+
+    +createWebsiteDocuments()
+
+    -createWebsiteDirectory(String websiteDirectory)
+    -createHTMLFile(String websiteDirectory, String authorName, String websiteName)
+    -createJSPath(String websiteDirectory)
+    -createCSSPath(String websiteDirectory)
+}
+Solution43 <|-- WebsiteCreator
 @enduml
