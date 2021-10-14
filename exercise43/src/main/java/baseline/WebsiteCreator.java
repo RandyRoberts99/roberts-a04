@@ -17,6 +17,7 @@ public class WebsiteCreator
     String authorName;
     boolean useJS;
     boolean useCSS;
+    String created;
 
     public WebsiteCreator(String websiteName, String authorName, boolean useJS, boolean useCSS)
     {
@@ -24,6 +25,7 @@ public class WebsiteCreator
         this.authorName = authorName;
         this.useJS = useJS;
         this.useCSS = useCSS;
+        created = "Created ./";
     }
     public void createWebsiteDocuments()
     {
@@ -33,6 +35,7 @@ public class WebsiteCreator
         String websiteDirectory = "data/website/" + websiteName;
 
         createWebsiteDirectory(websiteDirectory);
+
         createHTMLFile(websiteDirectory, authorName, websiteName);
         if (useJS)
         {
@@ -48,6 +51,12 @@ public class WebsiteCreator
         try
         {
             Files.createDirectory(Paths.get(websiteDirectory));
+
+            // to check if the default location is being created, if not, print the statement
+            if (!websiteDirectory.equalsIgnoreCase("data/website"))
+            {
+                System.out.print(created + websiteDirectory + "\n");
+            }
         }
         catch (NoSuchElementException | IllegalStateException | IOException e)
         {
@@ -59,6 +68,7 @@ public class WebsiteCreator
     {
         try (Formatter output = new Formatter(websiteDirectory + "/index.html"))
         {
+            System.out.print(created + websiteDirectory + "/index.html\n");
             output.format("<html>%n<title>%n%s%n</title>%n<meta>%n%s%n</meta>%n</html>", websiteName, authorName);
         }
         catch (NoSuchElementException | IllegalStateException | IOException e)
@@ -72,6 +82,7 @@ public class WebsiteCreator
         try
         {
             Files.createDirectory(Paths.get(websiteDirectory + "/js"));
+            System.out.print(created + websiteDirectory + "/js\n");
         }
         catch (NoSuchElementException | IllegalStateException | IOException e)
         {
@@ -84,6 +95,7 @@ public class WebsiteCreator
         try
         {
             Files.createDirectory(Paths.get(websiteDirectory + "/css"));
+            System.out.print(created + websiteDirectory + "/js\n");
         }
         catch (NoSuchElementException | IllegalStateException | IOException e)
         {
