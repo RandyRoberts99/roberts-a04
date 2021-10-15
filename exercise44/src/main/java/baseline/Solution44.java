@@ -13,7 +13,8 @@ public class Solution44
 {
     private static final Scanner reader = new Scanner(System.in);
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException
+    {
         Solution44 solution = new Solution44();
         Gson gson = new Gson();
         JsonReader jsonReader = new JsonReader(new FileReader("data/exercise44_input.json"));
