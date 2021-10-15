@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Solution45 {
+Scanner reader
+Formatter output
+
+main()
+scanFile()
+replaceKeywordsInString()
+printToFile()
+}
+
+@enduml
