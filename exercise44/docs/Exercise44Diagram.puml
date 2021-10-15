@@ -14,8 +14,18 @@ class Product
     String name;
     double price;
     int quantity;
-
-    +searchProducts()
 }
-Solution44 <|-- Product
+class ProductList
+{
+    ProductList(Product[] products)
+}
+class ProductSearcher
+{
+    +searchProducts()
+    +matchProduct()
+    -printProduct()
+}
+Solution44 <|-- ProductSearcher
+Solution44 <|-- ProductList
+ProductList <|-- Product
 @enduml
