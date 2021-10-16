@@ -1,10 +1,10 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-
 ' For the same reason as exercise 41, there is only one class because it removes unnecessary
 ' abstraction and complexity from the problem.
 ' A program with only 40 lines of code should not need a new class if done properly.
+
 class Solution45 {
 Scanner reader
 Formatter output

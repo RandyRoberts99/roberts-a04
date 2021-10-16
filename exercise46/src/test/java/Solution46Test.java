@@ -13,7 +13,7 @@ import java.util.Scanner;
 class Solution46Test
 {
     @Test
-    public void testWordPrintingMethod()
+    void testWordPrintingMethod()
     {
         Solution46 testSolution = new Solution46();
         List<WordCounter> testWordCounterList = new ArrayList<>();
@@ -30,7 +30,7 @@ class Solution46Test
         }
     }
     @Test
-    public void testWordPrintingMethodTwo()
+    void testWordPrintingMethodTwo()
     {
         Solution46 testSolution = new Solution46();
         List<WordCounter> testWordCounterList = new ArrayList<>();

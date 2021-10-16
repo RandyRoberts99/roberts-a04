@@ -56,7 +56,7 @@ public class Solution46
         }
         return wordCounterList;
     }
-    private void printWordsInOrder(List<WordCounter> wordCounterList)
+    public void printWordsInOrder(List<WordCounter> wordCounterList)
     {
         while (!wordCounterList.isEmpty())
         {
@@ -75,7 +75,7 @@ public class Solution46
             wordCounterList.remove(maxWordAmountIndex);
         }
     }
-    private void printWord(WordCounter highestWord)
+    public void printWord(WordCounter highestWord)
     {
         System.out.print(highestWord.uniqueWord + ":");
         int numSpaces = 10 - highestWord.uniqueWord.length() - 1;

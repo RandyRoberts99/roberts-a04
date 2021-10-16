@@ -2,9 +2,6 @@ import baseline.WebsiteCreator;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -26,7 +23,7 @@ class Solution43Test
         boolean cssFileExists = cssFile.exists();
         assertEquals(true, cssFileExists);
 
-        /* // for testing if js file exists
+        /*  (for testing if js file exists)
         * File jsFile = new File("data/website/" + websiteName + "/js");
         * boolean jsFileExists = jsFile.exists();
         * assertEquals(false, jsFileExists);
