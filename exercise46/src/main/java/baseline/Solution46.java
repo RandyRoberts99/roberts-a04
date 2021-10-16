@@ -33,5 +33,61 @@ public class Solution46
             e.printStackTrace();
         }
     }
-    
+    public List<WordCounter> scanFile(Scanner reader, List<WordCounter> wordCounterList)
+    {
+        while (reader.hasNext())
+        {
+            boolean unregisteredWord = true;
+            String currentWord = reader.next();
+
+            for (int i = 0; i < wordCounterList.size(); i++)
+            {
+                if (wordCounterList.get(i).uniqueWord.equalsIgnoreCase(currentWord))
+                {
+                    wordCounterList.get(i).wordCount++;
+                    unregisteredWord = false;
+                }
+            }
+            if (unregisteredWord)
+            {
+                WordCounter newWord = new WordCounter(currentWord, 1);
+                wordCounterList.add(newWord);
+            }
+        }
+        return wordCounterList;
+    }
+    private void printWordsInOrder(List<WordCounter> wordCounterList)
+    {
+        while (!wordCounterList.isEmpty())
+        {
+            int maxWordAmount = -1;
+            int maxWordAmountIndex = -1;
+
+            for (int i = 0; i < wordCounterList.size(); i++)
+            {
+                if (wordCounterList.get(i).wordCount > maxWordAmount)
+                {
+                    maxWordAmount = wordCounterList.get(i).wordCount;
+                    maxWordAmountIndex = i;
+                }
+            }
+            printWord(wordCounterList.get(maxWordAmountIndex));
+            wordCounterList.remove(maxWordAmountIndex);
+        }
+    }
+    private void printWord(WordCounter highestWord)
+    {
+        System.out.print(highestWord.uniqueWord + ":");
+        int numSpaces = 10 - highestWord.uniqueWord.length() - 1;
+        
+        for (int i = 0; i < numSpaces; i++)
+        {
+            System.out.print(" ");
+        }
+        for (int j = 0; j < highestWord.wordCount; j++)
+        {
+            System.out.print("*");
+        }
+        System.out.print("\n");
+    }
 }

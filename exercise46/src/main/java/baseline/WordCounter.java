@@ -2,8 +2,9 @@ package baseline;
 
 public class WordCounter
 {
-    String uniqueWord;
-    int wordCount;
+    public String uniqueWord;
+    public int wordCount;
+
     public WordCounter(String uniqueWord, int wordCount)
     {
         this.uniqueWord = uniqueWord;
